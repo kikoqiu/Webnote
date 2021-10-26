@@ -18,7 +18,7 @@
 
 
     <div class="row">
-      <q-input color="purple-12" v-model="note.title" placeholder="Title" style='width:100%;'>
+      <q-input color="purple-12" v-model="note.title" placeholder="Title" borderless dense style='width:100%;' input-style="padding-left:5px;">
           <!--template v-slot:prepend>
             <q-btn color="secondary" labe="">
             </q-btn>
@@ -74,6 +74,7 @@
         </template>
       </q-input>      
     </div>
+    <q-separator/>
     <!--div class="form-group row">
       <div class="col-sm-2">
       <label v-if="note.is_todo==1" class="btn btn-secondary btn-sm active"><i class="fas fa-tasks"></i> Tasks ?

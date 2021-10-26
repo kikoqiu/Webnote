@@ -1,16 +1,13 @@
 <template>
   <div class="fit" style="background-color:#f5f5f5; margin:0px 3px;">
-    <q-list dense >
-      <q-item clickable v-ripple>
-          <q-item-section>
-            <q-input v-model="filter" placeholder="Search All" debounce="500" @update:model-value="onSearch">
-              <template v-slot:append>
-                <q-btn color="primary" @click="newNote" dense icon="assignment">
-                </q-btn>
-              </template>
-            </q-input>
-          </q-item-section>
-      </q-item>
+    <q-input v-model="filter" placeholder="Search All" debounce="500" borderless dense @update:model-value="onSearch"  style="padding-left:16px;padding-right:8px;">
+      <template v-slot:append>
+        <q-btn color="primary" @click="newNote" dense icon="assignment">
+        </q-btn>
+      </template>
+    </q-input>
+    <q-separator />
+    <q-list dense  separator>
       <template v-for="no in this.notes" :key="no.id">
         <q-item clickable v-ripple @click="editNote(no);this.current=no;"  :active="current?.id === no?.id" active-class="my-menu-link">
           <q-item-section>
@@ -19,8 +16,7 @@
               {{no.title}}
             </q-item-label-->
           </q-item-section>
-        </q-item>      
-      <q-separator spaced inset />
+        </q-item>
     </template>
     </q-list>
   </div>

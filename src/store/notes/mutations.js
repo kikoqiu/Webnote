@@ -22,8 +22,14 @@ export const NOTE_APPEND=(state, note) => {
 }
 
 export const NOTE_CHANGE=(state, note) => {
-  const el = state.notes.find(t => t.id === note.id)
-  state.notes.splice(state.notes.indexOf(el), 1, note)
+  const el = state.notes.find(t => t.id === note.id);
+  const pos=state.notes.indexOf(el);
+  console.log(`find note ${el?.id} as pos ${pos}`);
+  if(pos==-1){
+    state.notes.splice(0, 0, note)
+  }else{
+    state.notes.splice(pos, 1, note)
+  }
 }
 
 export const NOTE_REMOVE=(state, id) => {

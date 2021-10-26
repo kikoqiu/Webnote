@@ -52,10 +52,11 @@ export async function NOTE_FETCH_AUTO(context) {
   };
 
   export const NOTE_CHANGE=async ({ commit }, note) => {
+    console.log('NOTE_CHANGE');
     if(note.id){
-      await notesApi.updateNote(note)
+      note=await notesApi.updateNote(note)
     }else{
-      await notesApi.createNote(note)
+      note=await notesApi.createNote(note)
     }
     commit(types.NOTE_CHANGE, note)
   };
