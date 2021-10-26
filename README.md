@@ -5,3 +5,10 @@
 * If you want to use it on the internet, you can redirect the clipper server's port with a reverse proxy.
 * You can install the joplin cli and use `joplin server start` to start a clipper server.
 * Remenber to set the token with `:config api.token 123456` to set the api token first.
+
+
+# Dev & Build
+* Use Vue and Quasar https://quasar.dev/
+* Install Quasar Cli
+* Run quasar dev to debug
+* Run quasar build to build
