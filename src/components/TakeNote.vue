@@ -199,7 +199,7 @@ export default {
           break;
       }
     },
-    doNote (e) {
+    /*doNote (e) {
       this.errors = []
 
       if (this.note.parent_id === undefined) {
@@ -219,7 +219,7 @@ export default {
       }
 
       e.preventDefault()
-    },
+    },*/
     createNewTag(){
 
     },
@@ -228,6 +228,8 @@ export default {
       if(note==null){
         note=this.note;
       }
+      if(!this.note_changed)return;
+      this.note_changed=false;
       console.log('tryUpdateNote');
       
       // payload
@@ -252,9 +254,6 @@ export default {
         .catch((error) => {
           //this.note.updated = 0
         });
-
-      this.note_changed=false;
-
     },
     /* delete action pressed */
     removeNote () {
